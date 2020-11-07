@@ -25,7 +25,7 @@ const App = () => {
 		// console.log('in app.js', name, email, amount);
 
 		axios
-			.post('http://localhost:5000/razorpay', {
+			.post('https://frozen-headland-04378.herokuapp.com/razorpay', {
 				name,
 				email,
 				amount,
