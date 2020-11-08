@@ -51,7 +51,8 @@ const App = () => {
 						alert(response.razorpay_signature);
 					},
 					prefill: {
-						name,
+						name: data.name,
+						email: data.email,
 					},
 				};
 				const paymentObject = new window.Razorpay(options);
