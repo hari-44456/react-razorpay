@@ -46,9 +46,12 @@ const App = () => {
 					order_id: data.id,
 
 					handler: function (response) {
-						alert(response.razorpay_payment_id);
-						alert(response.razorpay_order_id);
-						alert(response.razorpay_signature);
+						alert(
+							`Keep this with you 
+							Payment Id: ${response.razorpay_payment_id}
+							Order Id: ${response.razorpay_order_id}
+							Payment Signature: ${response.razorpay_signature}`,
+						);
 					},
 					prefill: {
 						name: data.name,
