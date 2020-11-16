@@ -10,9 +10,6 @@ const Payment = () => {
 		const script = document.createElement('script');
 		script.src = 'https://checkout.razorpay.com/v1/checkout.js';
 		document.body.appendChild(script);
-
-		script.onload = () => console.log('script loaded');
-		script.onerror = () => console.log('script not loaded');
 	}, []);
 
 	const displayRazorpay = async (e) => {
@@ -22,18 +19,15 @@ const Payment = () => {
 			alert('Please fill all the fields...');
 			return;
 		}
-		// console.log('in Payment.js', name, email, amount);
-
+		// 'https://frozen-headland-04378.herokuapp.com/razorpay'
 		axios
-			.post('https://frozen-headland-04378.herokuapp.com/razorpay', {
+			.post('http://localhost:5000/razorpay', {
 				name,
 				email,
 				amount,
 			})
 			.then(async (t) => {
-				// console.log('then', t);
 				const data = t.data;
-				// console.log('data is ', data);
 
 				const options = {
 					key: process.env.REACT_APP_RAZORPAY_KEY,
